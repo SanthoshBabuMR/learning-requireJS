@@ -2,8 +2,7 @@ require.config({
 	baseUrl: "/public/scripts/",
 	paths: {
 		// lib
-		"jquery": [ "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1-rc2/jquery",
-					"lib/jquery-2.1.0"],
+		"jquery": "lib/jquery-2.1.0",
 		"moment": "lib/moment-with-langs",
 		"text": "lib/text",
 		"async": "lib/async",
@@ -31,6 +30,7 @@ require.config({
 		"jsonpCall": "modules/jsonpCall",
 		"oldModule": "modules/oldModule",
 		"newModule": "modules/newModule",
+		"exploringBundles": "modules/exploringBundles",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",

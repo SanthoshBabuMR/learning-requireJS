@@ -1,0 +1,3 @@
+ node r.js -o requireJSBuildSingleFile.js
+
+ node r.js -o requireJSBuildDir.js

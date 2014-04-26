@@ -1,0 +1,1 @@
+This is the target build directory for generating single script file
