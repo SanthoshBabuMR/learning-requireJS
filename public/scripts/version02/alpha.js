@@ -1,0 +1,3 @@
+define({
+	version: "02"
+});

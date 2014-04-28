@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>multi Version Support</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+</head>
+<body>
+	<h1>Multip Version Support</h1>
+	<div class="disp">
+
+	</div>
+	<script src="/public/scripts/lib/require.js"></script>
+
+	<script>
+
+		var requireVersionOld = require.config({
+			context: "context01",
+			baseUrl: "/public/scripts/version01"
+		});
+
+		requireVersionOld( [ "require", "alpha"], function ( require, alpha ) {
+			var text = document.createTextNode("loaded alpha module version : " + alpha.version);
+			var node = document.createElement("p");
+			node.appendChild ( text )
+			document.getElementsByClassName("disp")[0].appendChild(  node );
+		} );
+
+		var requireVersionLatest = require.config({
+			context: "context02",
+			baseUrl: "/public/scripts/version02"
+		});
+
+		requireVersionLatest( [ "require", "alpha"], function ( require, alpha ) {
+			var text = document.createTextNode("loaded alpha module version : " + alpha.version);
+			var node = document.createElement("p");
+			node.appendChild ( text )
+			document.getElementsByClassName("disp")[0].appendChild(  node );
+		} );
+
+	</script>
+</body>
+</html>

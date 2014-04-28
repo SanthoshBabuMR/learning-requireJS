@@ -11,8 +11,10 @@ require.config({
 
 		// require modules
 		"exploringBundles": "modules/exploringBundles"
-	},
-	bundles: {
-		"primary": ["jquery", "colors", "aSimpleObjectDefinition", "aSimpleFunctionDefinition"]
 	}
 })
+requirejs.config({
+    bundles: {
+        "primary": ["jquery", "colors", "aSimpleObjectDefinition", "aSimpleFunctionDefinition"]
+    }
+});

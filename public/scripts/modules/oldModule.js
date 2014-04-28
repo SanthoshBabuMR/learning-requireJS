@@ -1,4 +1,4 @@
-require( ["jquery", "modules/colors"], function( $, colors ) {
+define( ["jquery", "colors"], function( $, colors ) {
 	var str = "";
 		str += "<h1>Exploring Map Attribute</h1>";
 		str += "<p>";
@@ -8,4 +8,7 @@ require( ["jquery", "modules/colors"], function( $, colors ) {
 	$("body").append(
 		str
 	);
+	return {
+
+	};
 });

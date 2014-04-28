@@ -8,7 +8,7 @@ require.config({
 		"async": "lib/async",
 
 		// define modules
-		"colors": "modules/colors",
+		"colorsv1": "modules/colors",
 		"colorsv2": "modules/colors.0.0.2",
 		"aSimpleObjectDefinition": "modules/aSimpleObjectDefinition",
 		"aSimpleFunctionDefinition": "modules/aSimpleFunctionDefinition",
@@ -16,7 +16,10 @@ require.config({
 		"moduleA": "modules/moduleA",
 		"moduleB": "modules/moduleB",
 		"dataType": "modules/dataType",
-		"typeCheck": "modules/typeCheck",
+		"typeCheck": "modules/typeCheck",		
+		"oldModule": "modules/oldModule",
+		"newModule": "modules/newModule",
+		"getAuthor": "modules/getAuthor",
 
 		// require modules
 		"helloWorld": "modules/helloWorld",
@@ -28,9 +31,9 @@ require.config({
 		"namedModule": "modules/namedModule",
 		"jsonCall": "modules/jsonCall",
 		"jsonpCall": "modules/jsonpCall",
-		"oldModule": "modules/oldModule",
-		"newModule": "modules/newModule",
 		"exploringBundles": "modules/exploringBundles",
+		"requireJSConfiguration": "modules/requireJSConfiguration",
+		"passingConfigurationInfo": "modules/passingConfigurationInfo",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
@@ -52,12 +55,20 @@ require.config({
 			exports: "bb"
 		}
 	},
-	map: {
-
+	map : {
+		"*" : {
+			"colors": "modules/colors",
+		},
+		"newModule" : {
+			"colors": "modules/colors.0.0.2",
+		}
 	},
 	config: {
-		"*": {
-			author: "santhosh babu"
+		"getAuthor": {
+			name: "santhosh babu"
+		},
+		"helloWorld": {
+			greetBye: "bye world"
 		}
 	}
 })

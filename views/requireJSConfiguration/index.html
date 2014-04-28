@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>requireJS Configuration</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+	<link rel="stylesheet" type="text/css" href="/public/css/modules/requireJSConfiguration.css" />
+</head>
+<body>
+	<h1>requireJS Configuration Options</h1>
+	<div class="grid-b grid-container-config-opt">
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				baseUrl:
+			</div>
+			<div class="block-b">
+				root path to be used for all module lookups,
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<code>baseUrl</code> is a string containing the path to the script's base directory
+						</li>
+						<li>
+							<mark class="eg">Example - absolute path:</mark>
+							<span class="code-block">
+								<span>
+									baseUrl: "/public/scripts"
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - relative path:</mark>
+							<span class="code-block">
+								<span>
+									baseUrl: "../public/scripts"
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							If no baseUrl is not set, 
+							<ul>
+								<li>
+									The default value will be the location of the HTML page that loads require.js.
+								</li>
+								<li>
+									If a data-main attribute is used, that path will become the baseUrl.
+								</li>
+							</ul>
+						</li>
+						<li>
+							baseUrl is used only when confirming to moduleID pattern
+						</li>
+						<li>
+							any dependency string starting with a <code>slash</code>, has a <code>protocol</code>, or ends with <code>.js</code> will not use baseUrl
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				paths:
+			</div>
+			<div class="block-b">
+				path mappings for module names,
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<code>paths</code> is a json, in which &quot;key&quot; denotes the moduleID, while &quot;value&quot; points to the path for the module, relative to <code>baseUrl</code>
+						</li>
+						<li>
+							<mark class="eg">Example - relative path:</mark>
+							<span class="code-block">
+								<span>paths: { 
+									<span>&quot;moduleA&quot;: path/to/moduleA,</span>
+									<span>&quot;moduleB&quot;: path/to/moduleB</span>
+								}
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - Using CDN and fallback:</mark>
+							<span class="code-block">
+								<span>paths: { 
+									<span>&quot;jquery&quot;: [
+										<span>//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js,</span>
+										<span>local/path/to/jquery</span>
+									]</span>
+								}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							path settings are to relative to baseUrl
+						</li>
+						<li>
+							If paths setting starts with a "/" or has a URL protocol, then they are considered absolute paths
+						</li>
+						<li>
+							The path used for a module name should not include an extension such as &quot;.js&quot;, since the path mapping could be for a directory.
+						</li>
+						<li>
+							paths fallbacks can be specified, to allow trying a load from a CDN location, but falling back to a local path if CDN location fails to load. <mark class="imp">However, this doesn't work well when using optimizer.</mark>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				shim:
+			</div>
+			<div class="block-b">
+				 Configure dependencies, exports, and custom initialization for legacy code that doesn't confirm AMD pattern.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - Including a legacy modules using shim config:</mark>
+							<span class="code-block">
+								<span>
+									shim: {
+										<span>
+											"legacyModule": {
+												<span>
+													"exports": "<mark class="highlt">mylegacyModule</mark>",
+												</span>
+												<span>
+													"deps": [ "dependencyModuleOne", "dependencyModuleTwo" ]
+												</span>
+												<span>
+													"init": function () {
+														<span>
+															// do init stuff here
+														</span>
+													}
+												</span>
+											}
+										</span>
+									}
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - including a plugin:</mark>
+							<span class="code-block">
+								<span>
+									shim: {
+										<span>
+											"jquery.scroll": {
+												<span>
+													deps: [ "jquery" ],
+												</span>
+												<span>
+												    exports: "jQuery.fn.scroll"
+												</span>
+											}
+										</span>
+									}
+								</span>
+							</span>
+							This format is useful, for loading only the dependencies 
+						</li>
+						<li>
+							<mark class="eg">Example - requiring the legacy modules as a dependency:</mark>
+							<span class="code-block">
+								<span>
+									require( [ "legacyModule" ], function( <mark class="highlt">mylegacyModule</mark> ) {
+										<span>
+											mylegacyModule.callGoogleAPI();
+										</span>
+									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							<code>shim</code> configuration helps to overcome the issues related with ordered loading of script modules.
+						</li>
+						<li>
+							The value given to <code>exports</code> property, will be set to the global exposed variable from the legacy module.
+						</li>
+						<li>
+							<code>deps</code> property, lists out the dependencies for the legacyModule, that <mark class="imp">must</mark> be loaded, before the legacy module is loaded into memory.
+						</li>
+						<li>
+							<code>init</code> property, takes in a function that performs initialization operation once the shimmed script is loaded into memory.
+						</li>
+						<li>
+							<code>this</code> object within <code>init</code> function will refer to <code>window</code> object.
+						</li>
+						<li>
+							<code>shim</code> configuration is supported only non-AMD modules.
+						</li>
+						<li>
+							A module configured using <code>shim</code> can depend only on other <mark class="imp">shimmed scripts</mark> or <mark class="imp">AMD modules that don't have dependencies</mark>
+						</li>
+						<li>
+							<mark class="imp">The only way to include/specify shim config for optimization using r.js is to use <code>mainConfigFile</code> property.</mark>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				bundles: (  obscure )
+			</div>
+			<div class="block-b">
+				configures multiple module IDs to be found in another script.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							  obscure 
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Ref
+							<br />
+							<a href="https://groups.google.com/forum/#!topic/requirejs/MqJouSkI1U0">How to use the new "bundles" property. - Google Groups</a>
+							<br />
+							<a href="https://github.com/jrburke/requirejs/issues/1034">Shortcomings of bundles features</a>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				map:
+			</div>
+			<div class="block-b">
+				 For the given module prefix, instead of loading the module with the given ID, substitute a different module ID.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - mapping multiple version of <code>customPanel</code></mark>
+							<span class="code-block">
+								<span>
+									map: {
+										<span>
+											"<mark class="highlt">myOldModule</mark>" : {
+												<span>
+													"customPanel": "path/to/customPanel/v1.3"
+												</span>
+											},
+										</span>
+										<span>
+											"<mark class="highlt">myNewModule</mark>" : {
+												<span>
+													"customPanel": "path/to/customPanel/latest"
+												</span>
+											},
+										</span>
+									}
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - requiring different versions of <code>customPanel</code></mark>
+							<span class="code-block">
+								<span>
+									<mark class="highlt">define</mark>( "<mark class="highlt">myOldModule</mark>", [ "customPanel" ], function( customPanel ) ) {
+										<span>
+											// customPanel v1.3 loaded
+										</span>
+									}
+								</span>
+								<span>
+									<mark class="highlt">define</mark>( "<mark class="highlt">myNewModule</mark>", [ "customPanel" ], function( customPanel ) ) {
+										<span>
+											// customPanel latest version loaded
+										</spancustomPanel									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Works only with AMD modules that call <code>define()</code> and register as anonymous modules.
+						</li>
+						<li>
+							<mark class="imp">Doesn't work with <code>require</code> modules</mark>
+						</li>
+						<li>
+							Use "*" map value, to target all modules loaded. If there is a more specific map config, that one will take precedence over the star config
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				config:
+			</div>
+			<div class="block-b">
+				 pass configuration information to a module
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - passing configuration info</mark>
+							<span class="code-block">
+								<span>
+									config: {
+										<span>
+											'moduleA': {
+												<span>
+													author: "tom"
+												</span>
+									        },
+										</span>
+								        <span>
+											'moduleB': {
+												<span>
+								            		author: "jerry"
+												</span>
+									        },
+										</span>
+								    }
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - using configuration info in a module</mark>
+							<span class="code-block">
+								<span>
+									define( [ "moduleA", "module" ], function ( A, module ) {
+										<span>
+											return {
+												<span>
+													author : module.config().author
+												</span>												
+											}
+										</span>										
+									} );
+								</span>								
+							</span>
+							<span class="code-block">
+								<span>
+									define( [ "moduleB", "module" ], function ( B, module ) {
+										<span>
+											return {
+												<span>
+													author : module.config().author
+												</span>												
+											}
+										</span>										
+									} );
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Modules read the configuration information, using special dependency "module" and calling module.config()
+						</li>
+						<li>
+							works only with <code>define</code> modules.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				packages:
+			</div>
+			<div class="block-b">
+				  configures loading modules from CommonJS packages.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes hide">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row hide">
+		<!-- row begin -->
+			<div class="block">
+				<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				nodeIdCompat:
+			</div> 
+			<div class="block-b">
+				 Used when requireJS is used in Node environment. 
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - using nodeIdCompat</mark>
+							<span class="code-block">
+								<span>
+									{
+										<span>
+											nodeIdCompat: true
+										</span>
+									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							 Node treats module ID example.js and example the same. By default these are two different IDs in RequireJS. If you end up using modules installed from npm, then you may need to set this config value to true to avoid resolution issues.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				waitSeconds:
+			</div>
+			<div class="block-b">
+				 The number of seconds to wait before giving up on loading a script.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - using timeout for modules</mark>
+							<span class="code-block">
+								<span>
+									{
+										<span>
+											waitSeconds: 10 // timeout equals 10 seconds
+										</span>
+									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Default timeout value is 7 seconds
+						</li>
+						<li>
+							Setting timeout to 0, disables the timeout.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				context: ( obscure )
+			</div>
+			<div class="block-b">
+				 A name to give to a loading context. This allows require.js to load multiple versions of modules in a page
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - Multi Version Support</mark>
+							<span class="code-block">
+								<span>
+									var requireVersionOld = require.config( {
+										<span>context: "context01",</span>
+										<span>baseUrl: "/public/scripts/version01"</span>
+									} );
+								</span>
+								
+								<span>
+									requireVersionOld( [ "require", "alpha"], function ( require, alpha ) {
+									<span>
+										console.log( "loaded alpha module version : " + alpha.version );
+									</span>
+									} );
+								</span>
+								<span>
+									var requireVersionLatest = require.config({
+										<span>context: "context02",</span>
+										<span>baseUrl: "/public/scripts/version02"</span>
+									} );
+								</span>
+								
+								<span>
+									requireVersionLatest( [ "require", "alpha"], function ( require, alpha ) {
+									<span>
+										console.log( "loaded alpha module version : " + alpha.version );
+									</span>
+									} );
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Enables multiversion support for a module
+						</li>
+						<li>
+							multiversion support is made possible by using different require.config(), by setting the <code>context</code> property to the required version.
+							<br />
+							require.config() returns a require function that will use the context configuration for loading the modules.
+						</li>
+						<li>
+							ensure <code>require</code> module is available as dependency for proper working.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				deps:
+			</div>
+			<div class="block-b">
+				An array of dependencies to load
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - deps</mark>
+							<span class="code-block">
+								<span>
+									{
+									<span>
+										deps : [ "jquery", "hammer", "jquery.scroll" ]
+									</span>
+									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Useful when require is defined as a config object before require.js is loaded, and you want to specify dependencies to load as soon as require() is defined.
+						</li>
+						<li>
+							Using deps is just like doing a require([]) call, but done as soon as the loader has processed the configuration.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+			<!-- row begin -->
+			<div class="block-a">
+				callback:
+			</div>
+			<div class="block-b">
+				 A function to execute after deps have been loaded.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - callback</mark>
+							<span class="code-block">
+								<span>
+									{
+									<span>
+										deps : [ "jquery", "hammer", "jquery.scroll" ],
+									</span>
+									<span>
+										callback: function( ) {
+										<span>
+											console.log( "jquery, hammer, jquery.scroll modules loaded" );
+										</span>
+										}
+									</span>
+									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Useful when require is defined as a config object before require.js is loaded.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				enforceDefine:
+			</div>
+			<div class="block-b">
+				 If set to true, an error will be thrown if a script loads that does not call define() or that doesn not have a shim exports string value that can be checked.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							  	<mark class="eg">Example - using enforceDefine</mark>
+								<span class="code-block">
+									<span>
+										{
+											<span>
+												enforceDefine: true
+											</span>
+										}
+									</span>
+								</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							  script.onerror does not work in IE 6-8 and script.onerror does work in IE 9+, but it has a bug where it does not fire script.onload event handlers right after execution of script.
+						</li>
+						<li>
+							with <code>enforceDefine</code>, you must ensure all modules is provided as a <code>define</code> module or uses the shim config to specify string exports for anything that does not use define().
+						</li>
+						<li>
+							If you do set enforceDefine: true, and you use data-main="" to load your main JS module, then that main JS module must call define() instead of require() to load the code it needs. The main JS module can still call require/requirejs to set config values, but for loading modules it should use define().
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				xhtml:
+			</div>
+			<div class="block-b">
+				 If true, uses document.createElementNS() to create script elements.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes hide">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row hide">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				urlArgs:
+			</div>
+			<div class="block-b">
+				 Query string arguments appended to URLs that RequireJS uses to fetch resources.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - cache busting</mark>
+							<span class="code-block">
+								<span>
+									{
+									<span>
+										urlArgs: "bust=" + {{buildNumber}}
+									</span>
+									}
+								</span>
+							</span>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Most useful to cache bust assets.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				scriptType:
+			</div>
+			<div class="block-b">
+				 Specify the value for the <code>type</code> attribute used for script tags.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example</mark>
+							<span class="code-block">
+							<span>
+							{
+								<span>
+									scriptType : "text/javascript;version=1.8"
+								</span>
+							}
+							</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Default is "text/javascript"
+						</li>
+						<li>
+							To use Firefox's JavaScript 1.8 features, use "text/javascript;version=1.8".
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				skipDataMain: (  obscure )
+			</div>
+			<div class="block-b">
+				 If set to true, skips the data-main attribute scanning done to start module loading.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes hide">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row hide">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							obscure
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							obscure
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<script src="/public/scripts/lib/require.js"></script>
+		<script>
+			require( ["/public/scripts/config/requireConfig.js"], function( ) {
+				require( ["requireJSConfiguration"] );
+			})
+		</script>
+</body>
+</html>
