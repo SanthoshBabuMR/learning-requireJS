@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>web Workers</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+</head>
+<body>
+	<h1>Web Workers &amp; requireJS</h1>
+	<script src="/public/scripts/lib/require.js"></script>
+	<script>
+		require( ["/public/scripts/config/requireConfig.js"], function( ) {
+			require( ["webWorkers"] );
+		})
+	</script>
+</body>
+</html>

@@ -34,6 +34,7 @@ require.config({
 		"exploringBundles": "modules/exploringBundles",
 		"requireJSConfiguration": "modules/requireJSConfiguration",
 		"passingConfigurationInfo": "modules/passingConfigurationInfo",
+		"webWorkers": "modules/webWorkers",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
@@ -70,5 +71,6 @@ require.config({
 		"helloWorld": {
 			greetBye: "bye world"
 		}
-	}
+	},
+	urlArgs : "bust=" + (new Date()).getTime()
 })
