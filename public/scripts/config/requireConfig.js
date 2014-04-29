@@ -35,6 +35,7 @@ require.config({
 		"requireJSConfiguration": "modules/requireJSConfiguration",
 		"passingConfigurationInfo": "modules/passingConfigurationInfo",
 		"webWorkers": "modules/webWorkers",
+		"errorCallbacks": "modules/errorCallbacks",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
