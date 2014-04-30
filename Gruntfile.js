@@ -8,10 +8,24 @@ module.exports = function( grunt ) {
 					keepalive: true
 				}
 			},
-			"server2": {
+			"corsServer": {
 				"options": {
-					hostname: "127.0.0.2",
-					port: 6235,
+					hostname: "localhost",
+					port: 4234,
+					keepalive: true,
+					middleware: function(connect, options, middlewares) {
+									middlewares.push(function(req, res, next) {
+										res.setHeader('Access-Control-Allow-Origin', '*');
+										next();
+									});
+									return middlewares;
+								}
+					}
+			},
+			"ip": {
+				"options": {
+					hostname: "127.1.1.1",
+					port: 6234,
 					keepalive: true
 				}
 			}
@@ -19,5 +33,6 @@ module.exports = function( grunt ) {
 	});
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
 	grunt.registerTask( "default", "connect" );
-	grunt.registerTask( "server2", "connect:server2" );
+	grunt.registerTask( "corsServer", "connect:corsServer" );
+	grunt.registerTask( "serverIp", "connect:ip" );
 };
