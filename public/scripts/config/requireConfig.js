@@ -36,11 +36,21 @@ require.config({
 		"passingConfigurationInfo": "modules/passingConfigurationInfo",
 		"webWorkers": "modules/webWorkers",
 		"errorCallbacks": "modules/errorCallbacks",
+		"loadingNonJsAssets": "modules/loadingNonJsAssets",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
 		"underscore": "legacyModules/underscore",
-		"backbone": "legacyModules/jquery-1.7"
+		"backbone": "legacyModules/jquery-1.7",
+
+		// non js assets folder
+		"notes": "../notes",
+		"templates": "../templates",
+		"css": "../css",
+
+		// non js asset modules
+		"gridCss": "../css/modules/grid.css",
+		"layoutTemplate": "../templates/layout.html"
 	},
 	shim: {
 		"maths": {

@@ -1,0 +1,31 @@
+/* grids begin */
+[class*="grid-"] {
+	width: 100%;
+	margin-bottom: 10px;
+	border: 1px solid #cccccc;
+}
+[class*="grid-"] .row {
+	padding: 0 0 6px 0;
+	border-bottom: 1px solid #333333;
+}
+[class*="grid-"] .row:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+[class*="grid-"] [class*="block-"] {
+	float: left;
+	padding: 3px 5px;
+}
+[class*="grid-"] .block {
+	float: left;
+	width: 100%;
+	padding: 3px 5px;
+}
+.grid-a [class*="block-"] {
+	width: 50%;
+}
+.grid-b [class*="block-"] {
+	width: 33%;
+}
+/* grids end */
