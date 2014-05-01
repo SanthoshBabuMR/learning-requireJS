@@ -27,6 +27,7 @@ require.config({
 		"oldModule": "modules/oldModule",
 		"newModule": "modules/newModule",
 		"getAuthor": "modules/getAuthor",
+		"exploringEnforceDefine": "modules/exploringEnforceDefine",
 
 		// require modules
 		"helloWorld": "modules/helloWorld",
@@ -47,6 +48,7 @@ require.config({
 		"loadingNonJsAssetsCORS": "modules/loadingNonJsAssetsCORS",
 		"domReadyWithRequireJS": "modules/domReadyWithRequireJS",
 		"exploringLocale": "modules/exploringLocale",
+		"pathFallbacks": "modules/pathFallbacks",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
@@ -105,4 +107,4 @@ require.config({
 		}
 	},
 	urlArgs : "bust=" + (new Date()).getTime()
-})
+} );
