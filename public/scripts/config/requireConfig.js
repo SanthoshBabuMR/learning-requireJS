@@ -9,6 +9,10 @@ require.config({
 		"text": "lib/plugins/text",
 		"async": "lib/plugins/async",
 		"domReady": "lib/plugins/domReady",
+		"i18n": "lib/plugins/i18n",
+
+		// locale
+		"local": "../locale",
 
 		// define modules
 		"colorsv1": "modules/colors",
@@ -42,6 +46,7 @@ require.config({
 		"loadingNonJsAssets": "modules/loadingNonJsAssets",
 		"loadingNonJsAssetsCORS": "modules/loadingNonJsAssetsCORS",
 		"domReadyWithRequireJS": "modules/domReadyWithRequireJS",
+		"exploringLocale": "modules/exploringLocale",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
@@ -52,6 +57,7 @@ require.config({
 		"notes": "../notes",
 		"templates": "../templates",
 		"css": "../css",
+
 
 		// non js asset modules
 		"gridCss": "../css/modules/grid.css",

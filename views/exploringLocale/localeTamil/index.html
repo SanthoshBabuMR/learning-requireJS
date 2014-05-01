@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>exploring Locale - tamil</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+</head>
+<body>
+	<script src="/public/scripts/lib/require.js"></script>
+	<script>
+		require( ["/public/scripts/config/configExploringLocale.js"], function( ) {
+			requirejs.config({
+			    config: {
+			        i18n: {
+			            locale: 'ta-in'
+			        }
+			    }
+			});
+			require( ["exploringLocale"] );
+		})
+	</script>
+</body>
+</html>
