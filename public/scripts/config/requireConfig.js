@@ -27,7 +27,7 @@ require.config({
 		"oldModule": "modules/oldModule",
 		"newModule": "modules/newModule",
 		"getAuthor": "modules/getAuthor",
-		"exploringEnforceDefine": "modules/exploringEnforceDefine",
+		"jqueryPrivate": "modules/jqueryPrivate",
 
 		// require modules
 		"helloWorld": "modules/helloWorld",
@@ -49,6 +49,8 @@ require.config({
 		"domReadyWithRequireJS": "modules/domReadyWithRequireJS",
 		"exploringLocale": "modules/exploringLocale",
 		"pathFallbacks": "modules/pathFallbacks",
+		"exploringEnforceDefine": "modules/exploringEnforceDefine",
+		"jqueryNoconflict": "modules/jqueryNoconflict",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",

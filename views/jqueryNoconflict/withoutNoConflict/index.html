@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>jquery Noconflict</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+</head>
+<body>
+	<h1>jQuery without noConflict</h1>
+	<script src="/public/scripts/lib/require.js"></script>
+	<script>
+		require( ["/public/scripts/config/requireConfig.js"], function( ) {
+			require( ["jqueryNoconflict"] );
+		})
+	</script>
+</body>
+</html>
