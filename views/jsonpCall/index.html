@@ -3,8 +3,11 @@
 <head>
 	<title>jsonp Call</title>
 	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+	<link rel="stylesheet" type="text/css" href="/public/css/modules/jsonpCall.css" />
 </head>
 <body>
+	<h1>jsonp Call to get weather info for Chennai,in: </h1>
+	<span class="loading">loading <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span>
 	<script src="/public/scripts/lib/require.js"></script>
 	<script>
 		require( ["/public/scripts/config/requireConfig.js"], function( ) {

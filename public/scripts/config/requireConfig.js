@@ -110,5 +110,7 @@ require.config({
 			greetBye: "bye world"
 		}
 	},
-	urlArgs : "bust=" + (new Date()).getTime()
+	urlArgs : "bust=" + (new Date()).getTime(),
+	waitSeconds: 15
+	
 } );
