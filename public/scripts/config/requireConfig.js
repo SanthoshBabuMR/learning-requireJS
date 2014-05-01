@@ -4,8 +4,11 @@ require.config({
 		// lib
 		"jquery": "lib/jquery-2.1.0",
 		"moment": "lib/moment-with-langs",
-		"text": "lib/text",
-		"async": "lib/async",
+
+		// plugins
+		"text": "lib/plugins/text",
+		"async": "lib/plugins/async",
+		"domReady": "lib/plugins/domReady",
 
 		// define modules
 		"colorsv1": "modules/colors",
@@ -37,6 +40,8 @@ require.config({
 		"webWorkers": "modules/webWorkers",
 		"errorCallbacks": "modules/errorCallbacks",
 		"loadingNonJsAssets": "modules/loadingNonJsAssets",
+		"loadingNonJsAssetsCORS": "modules/loadingNonJsAssetsCORS",
+		"domReadyWithRequireJS": "modules/domReadyWithRequireJS",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",
@@ -50,7 +55,17 @@ require.config({
 
 		// non js asset modules
 		"gridCss": "../css/modules/grid.css",
-		"layoutTemplate": "../templates/layout.html"
+		"layoutTemplate": "../templates/layout.html",
+
+		// CORS Server request
+        "corstxt" : "http://localhost:4234/public/notes",
+        "corshtml" : "http://localhost:4234/public/templates",
+        "corscss" : "http://localhost:4234/public/css",
+
+        // Non-CORS server request
+        "noncorstxt" : "http://localhost:5234/public/notes",
+        "noncorshtml" : "http://localhost:5234/public/templates",
+        "noncorscss" : "http://localhost:5234/public/css"
 	},
 	shim: {
 		"maths": {

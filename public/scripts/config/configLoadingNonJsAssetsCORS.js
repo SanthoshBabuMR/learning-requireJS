@@ -3,7 +3,7 @@ require.config({
 	paths: {
 		// lib
 		"jquery": "lib/jquery-2.1.0",
-		"text": "lib/text",
+		"text": "lib/plugins/text",
 		
 		// require modules
 		"loadingNonJsAssetsCORS": "modules/loadingNonJsAssetsCORS",
