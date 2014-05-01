@@ -71,11 +71,13 @@ require.config({
         "corstxt" : "http://localhost:4234/public/notes",
         "corshtml" : "http://localhost:4234/public/templates",
         "corscss" : "http://localhost:4234/public/css",
+        "corsjson" : "http://localhost:4234/public/scripts/data/schema",
 
         // Non-CORS server request
         "noncorstxt" : "http://localhost:5234/public/notes",
         "noncorshtml" : "http://localhost:5234/public/templates",
-        "noncorscss" : "http://localhost:5234/public/css"
+        "noncorscss" : "http://localhost:5234/public/css",
+        "noncorsjson" : "http://localhost:5234/public/scripts/data/schema",
 	},
 	shim: {
 		"maths": {

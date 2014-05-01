@@ -6,17 +6,19 @@
 </head>
 <body>
 	<hr />
-	<h2>Notes</h2>
-	<p>For CORS to work as expected</p>
-	<ul>
-		<li>
-			requireJS module needs to be ensured that it returns "true" for "useXhr" function. Checkout <a href="/public/scripts/config/configLoadingNonJsAssetsCORS.js">/public/scripts/config/configLoadingNonJsAssetsCORS.js</a>
-		</li>
-		<li>
-			The server being requested for assets/resource must have the corresponding headers ( Access-Control-Allow-Origin, Access-Control-Allow-Methods ) set to allow CORS
-		</li>
-	</ul>
-	<small>Ensure all servers ( server, corsServer, nonCorsServer ) are started</small>
+	<div class="cors-notes" style="display: none;">
+		<h2>Notes</h2>
+		<p>For CORS to work as expected</p>
+		<ul>
+			<li>
+				requireJS module needs to be ensured that it returns "true" for "useXhr" function. Checkout <a href="/public/scripts/config/configLoadingNonJsAssetsCORS.js">/public/scripts/config/configLoadingNonJsAssetsCORS.js</a>
+			</li>
+			<li>
+				The server being requested for assets/resource must have the corresponding headers ( Access-Control-Allow-Origin, Access-Control-Allow-Methods ) set to allow CORS
+			</li>
+		</ul>
+	</div>
+	<mark class="severe error-info">Ensure all servers ( grunt, grunt corsServer, grunt nonCorsServer ) are started</mark>
 	<hr />
 	<script src="/public/scripts/lib/require.js"></script>
 	<script>

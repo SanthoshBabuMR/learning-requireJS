@@ -1,4 +1,4 @@
-require( [ "jquery", "text!notes/dummyText.txt", "text!templates/gridTemplate.html", "text!gridCss", "text!layoutTemplate!strip" ], function ( $, txt, html, grid, layout) {
+require( [ "jquery", "text!notes/dummyText.txt", "text!templates/gridTemplate.html", "text!gridCss", "text!layoutTemplate!strip", "text!personSchema" ], function ( $, txt, html, grid, layout, json) {
 	var str = "";
 
 		str += "<h1>Loading Non Js Assets.js using !text</h1>";
@@ -20,6 +20,16 @@ require( [ "jquery", "text!notes/dummyText.txt", "text!templates/gridTemplate.ht
 
 		str += "<h2>Data from layout.html using !strip:</h2>";
 		str += layout;
+
+		str += "<br />";
+
+		str += "<h2>Data from person.json:</h2>";
+		var profile = JSON.parse( json );
+		if( profile && profile.profile) {
+			for(i in profile.profile) {
+				str += i + "<br />";
+			}
+		}
 
 		$("body").append(
 			str

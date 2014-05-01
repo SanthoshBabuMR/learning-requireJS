@@ -12,9 +12,11 @@ require.config({
 		"notes": "../notes",
 		"templates": "../templates",
 		"css": "../css",
+		"json": "data/schema",
 
 		// non js asset modules
 		"gridCss": "../css/modules/grid.css",
-		"layoutTemplate": "../templates/layout.html"
+		"layoutTemplate": "../templates/layout.html",
+		"personSchema": "data/schema/profile.json"
 	}
 })
