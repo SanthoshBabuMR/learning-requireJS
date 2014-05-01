@@ -5,11 +5,19 @@ Exploring requireJS Library
 * grunt-contrib-connect
 
 **Launching server from grunt**
-* web server
-  * grunt
+* Web server
+```bash
+grunt
+```
 * "Cross-Orgin Resource Sharing" enabled server
-  * grunt corsServer
+```bash
+grunt corsServer
+```
 * Non-"Cross-Orgin Resource Sharing" server
-  * grunt nonCorsServer
+```bash
+grunt nonCorsServer
+```
 * run a server using ip address
-  * grunt serverIp
+```bash
+grunt serverIp
+```

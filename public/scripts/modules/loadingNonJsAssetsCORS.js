@@ -24,6 +24,8 @@ require( [ "jquery", "text!corstxt/dummyText.txt", "text!corshtml/gridTemplate.h
 		str += css || "unable to load css ( server may not be started )";
 		str += "</p>";
 
+		str += "<hr />";
+
 		str += "<h1>Loading Assets with across domains with non-CORS supporting server</h1>";
 
 		str += "<h2>Data from dummyText.txt:</h2>";
