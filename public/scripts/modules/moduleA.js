@@ -1,8 +1,24 @@
-define(["exports", "moduleB"], function( exports, b ){
+define(["moduleB", "exports"], function( b, exports ) {
 
-	var name = "moduleA";
-	modulesLoaded = [b.name, name];
+	var B = b;
+	var A = {
+ 		name: "moduleA"
+ 	};
+	exports.moduleA = function() { 
+		return {
+			  moduleA: A.name
+			, moduleB: B.name 
+		}
+	};
 
-	console.log( modulesLoaded );
-	exports.modulesLoaded = function() { return modulesLoaded };
 });
+
+// define( function( require, exports, module ) { 
+// 	var B = require("moduleB");
+// 	var A = {
+// 		name: "moduleA"
+// 	};
+// 	exports.moduleA = function( ) {
+// 		return [A.name, B.name];
+// 	};
+// } );
