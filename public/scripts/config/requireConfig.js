@@ -51,6 +51,7 @@ require.config({
 		"pathFallbacks": "modules/pathFallbacks",
 		"exploringEnforceDefine": "modules/exploringEnforceDefine",
 		"jqueryNoconflict": "modules/jqueryNoconflict",
+		"googleMapApiCall": "modules/googleMapApiCall",
 
 		// non-AMD Modules
 		"maths": "legacyModules/maths",

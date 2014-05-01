@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>google Map Api Call</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+</head>
+<body>
+	<h1>Google Maps</h1>
+	<div class="map-info">
+	</div>
+	<script src="/public/scripts/lib/require.js"></script>
+	<script>
+		require( ["/public/scripts/config/configGoogleMapApiCall.js"], function( ) {
+			require( ["googleMapApiCall"] );
+		})
+	</script>
+</body>
+</html>
