@@ -16,6 +16,9 @@ a,
 li {
 	font-size: 13px;
 }
+a {
+	color: rgb(0, 0, 238);
+}
 /* typography end */
 
 /* headers begin */

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>exploring enforceDefine</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+</head>
+<body>
+	<h1>Exploring enforceDefine</h1>
+	<h2>enforeDefine: true</h2>
+	<ul>
+		<li>
+			implies all AMD modules must use only define() and not require()
+		</li>
+		<li>
+			The above implies that, if requirejs.config() was included from a separate file, then it needs to wrapped in define()
+		</li>
+	</ul>
+	<div class="module-not-loaded-info">
+		<hr />
+		<h2>Notes</h2>
+		<p>
+			If you are seeing this, it means the modules have been loaded, please do the following
+		</p>
+		<ul>
+			<li>
+				For the AMD modules to execute, goto <a href="/public/scripts/config/configExploringEnforceDefine.js">/public/scripts/config/configExploringEnforceDefine.js</a> and wrap the configuration in a define().
+			</li>
+			<li>
+				goto <a href="/public/scripts/config/configExploringEnforceDefine.js">public/scripts/config/configExploringEnforceDefine.js</a> and update require() to define()
+			</li>
+		</ul>
+	</div>
+	<script src="/public/scripts/lib/require.js"></script>
+	<script>
+		require( ["/public/scripts/config/configExploringEnforceDefine.js"], function( ) {
+			require( ["exploringEnforceDefine"] );
+		})
+	</script>
+</body>
+</html>
