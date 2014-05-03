@@ -1,3 +1,6 @@
- run from root directory:	node buildScripts/r.js -o requireJSBuildSingleFile.js
+run from root directory
+-----------------------	
 
- buildScripts:				node buildScripts/r.js -o requireJSBuildDir.js
+optimizing single module	:	node buildScripts/r.js -o requireJSBuildSingleFile.js
+
+optimizing scripts directory:	node buildScripts/r.js -o requireJSBuildDir.js
