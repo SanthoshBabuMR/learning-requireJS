@@ -1,6 +1,28 @@
-run from root directory
------------------------	
+Single File Optimization ( run from root directory )
+------------------------
 
-optimizing single module	:	node buildScripts/r.js -o requireJSBuildSingleFile.js
+optimizing single module
+files with optimize			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingOptimize.js
 
-optimizing scripts directory:	node buildScripts/r.js -o requireJSBuildDir.js
+
+optimizing single module
+files with locale			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingLocale.js
+
+
+optimizing single module
+files with wrapShim			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingWrapShim.js
+
+
+optimizing single module	:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFile.js
+
+
+
+Directory Optimization ( run from root directory )
+----------------------
+
+optimizing scripts directory
+with skipDirOptimize		:	node buildScripts/r.js -o buildScripts/requireJSBuildDirUsingSkipDirOptimize.js
+
+
+optimizing scripts directory:	node buildScripts/r.js -o buildScripts/requireJSBuildDir.js
+

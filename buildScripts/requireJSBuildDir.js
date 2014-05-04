@@ -1,9 +1,11 @@
 ({
-    baseUrl: "../public/scripts",
-    mainConfigFile: "../public/scripts/config/requireConfig.js",
-    dir: "../buildDir",
-    optimize: "uglify",
-    modules: [
+
+      baseUrl: "../public/scripts"
+    , mainConfigFile: "../public/scripts/config/requireConfig.js"
+    // , optimize: "none"
+    , dir: "../buildDir"
+    , optimize: "uglify"
+    , modules: [
         {
             name: 'aSimpleFunctionDefinition'
         },
@@ -38,4 +40,6 @@
             name: 'relativePathLoading'
         }
     ]
+    // , "keepBuildDir": true
+
 })

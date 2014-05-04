@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>requireJS Optimization Config</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/render.css" />
+	<link rel="stylesheet" type="text/css" href="/public/css/modules/CustomgridAndNotes.css" />
+</head>
+<body>
+	<h1>requireJS Optimization Config Options</h1>
+	<div class="grid-b grid-container-config-opt">
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				appDir
+			</div>
+			<div class="block-b">
+				The top level directory that contains the entire app
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - using <code>appDir</code></mark>
+							<span class="code-block">
+								<span>
+									appDir: "../app/"		
+								</span>
+							</span>							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							If this option is used then it assumed the scripts file are in a subdirectory under this path.
+						</li>
+						<li>
+							<mark class="imp">If this option is specified, then all the files from the app directory will be copied to the directory specidified using <code>dir</code> config option.</mark>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				baseUrl
+			</div>
+			<div class="block-b">
+				 Specifies the base path for all script modules
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - using <code>baseUrl</code> along with <code>appDir</code> config option</mark>
+							<span class="code-block">
+								<span>
+									appDir: "../app",
+								</span>
+								<span>
+									baseUrl: "public/scripts"
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - using <code>baseUrl</code> without specifying <code>appDir</code> config option</mark>
+							<span class="code-block">
+								<span>
+									baseUrl: "../app/public/scripts"
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							If <code>appDir</code> is set, then <code>baseUrl</code> should be specified as relative to the <code>appDir</code>.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				mainConfigFile
+			</div>
+			<div class="block-b">
+				Path of requirejs configuration file to be passed for the optimization build.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - mainConfigFile</mark>
+							<span class="code-block">
+								<span>
+									mainConfigFile: "../app/public/scripts/config/requireConfig.js"
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							The path to mainConfigFile will be relative to the build script file
+						</li>
+						<li>
+							The path specified, must include the ".js" extension
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				paths
+			</div>
+			<div class="block-b">
+				Set paths for modules
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - specifying paths relative to baseUrl</mark>
+							<span class="code-block">
+								<span>
+									paths: {
+									<span>
+										"jquery": "lib/jquery-2.1.0",
+									</span>
+									<span>
+										"helloWorld": "modules/helloWorld"
+									</span>
+									<span>
+										"weatherChennai": "empty:", // a http call to get weather data
+									</span>
+									<span>
+										"jqueryCDN": "empty:"  // a CDN resource
+									</span>
+
+									}
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Used to set module paths, if <code>mainConfigFile</code> is not provided.
+						</li>
+						<li>
+							"empty:" maps module names that are CDN resources on a CDN or http calls
+						</li>
+						<li>
+							During optimization "empty:" ensures that file is skipped because it has no dependencies.
+						</li>	
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				packages
+			</div>
+			<div class="block-b">
+				Configure CommonJS packages
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes hide">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row hide">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				dir
+			</div>
+			<div class="block-b">
+				The directory to save the optimized build file(s)
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying the build output directory</mark>
+							<span class="code-block">
+								<span>
+									dir: "../build/"	
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							If <code>dir</code> is not specified, then path will default to be a directory called "build" as a sibling to the build file.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				keepBuildDir
+			</div>
+			<div class="block-b">
+				Do not delete the existing contents of directory specified by <code>dir</code> config option
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying keepBuildDir</mark>
+							<span class="code-block">
+								<span>
+									keepBuildDir: true // do not delete the existing contents in the directory
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Default value is <code>false</code>
+						</li>
+						<li>
+							The directory specified by <code>dir</code> config option will be deleted before the build starts again. This can avoided by setting <code>keepBuildDir</code> to <code>true</code>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				shim
+			</div>
+			<div class="block-b">
+				Specify the <code>shim</code> config option for ordering and dependencies
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying shim config</mark>
+							<span class="code-block">
+								<span>
+									shim: {
+									<span>
+										"maths": {
+										<span>
+											exports: "simpleMATH",
+										</span>
+										<span>
+											init: function () {
+											<span>
+												simpleMATH = this.maths;
+											</span>												
+											}
+										</span>
+										},
+									</span>
+									}
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							If shim config is used in the app during runtime, duplicate the config options under <code>shim</code>
+						</li>
+						<li>
+    						Using <code>mainConfigFile</code> is a better way to pass this information though, so that it is only listed in one place.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				wrapShim
+			</div>
+			<div class="block-b">
+				Wraps shimmed dependencies within define(), which inturn is wrapped by a anonymous intermediate function
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying wrapShim</mark>
+							<span class="code-block">
+								<span>
+									wrapShim: true
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Default value is <code>false</code>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				locale
+			</div>
+			<div class="block-b">
+				Inlines i18n resources will in the build
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying locale</mark>
+							<span class="code-block">
+								<span>
+									locale: "ta-in"
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Only one locale can be inlined for a build.
+						</li>
+						<li>
+							Root bundles referenced by a build layer will be included in a build layer regardless of locale being set
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				optimize
+			</div>
+			<div class="block-b">
+				optimization method to be used for all the JS files in the build output directory.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying optimization method</mark>
+							<span class="code-block">
+								<span>
+									optimize: "uglify"
+								</span>								
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Optimization Methods
+							<ul>
+								<li>
+									"uglify": (default) uses UglifyJS to minify the code.
+								</li>
+								<li>
+    								"uglify2": in version 2.1.2+. Uses UglifyJS2.
+    							</li>
+    							<li>
+    								"closure": uses Google's Closure Compiler in simple optimization. ( Only available, when run in Java Env )
+								</li>
+								<li>
+    								"none": no minification will be done.
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				skipDirOptimize
+			</div>
+			<div class="block-b">
+				If true, r.js will optimize only those scripts modules, specified as part of the <code>modules</code> config option
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example: specifying optimization method</mark>
+							<span class="code-block">
+								<span>
+									modules: [
+									<span>
+										{
+										<span>
+											name: "namedModule"
+										</span>
+								            
+								        }
+									</span>								        
+								    ],
+								</span>
+								<span>
+									optimize: "uglify2",
+								</span>
+								<span>
+									skipDirOptimize : true
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							<code>skipDirOptimize</code>, applies only if <code>dir</code> config option is specified. In other words, it works only when optimizing the app as a build directory.
+						</li>
+						<li>
+							Doesn't have any impact to the output build, if <code>optimize</code> config option is set to <code>none</code>
+						</li>
+						<li>
+							<code>skipDirOptimize</code>, <code>dir</code>, <code>optimize</code> config option(s) go together.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				generateSourceMaps
+			</div>
+			<div class="block-b">
+				generate source map for the minified code
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+
+	</div>
+		<script src="/public/scripts/lib/require.js"></script>
+		<script>
+			require( ["/public/scripts/config/requireConfig.js"], function( ) {
+				require( ["notesPlugin"] );
+			})
+		</script>
+</body>
+</html>

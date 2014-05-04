@@ -40,7 +40,7 @@ require.config({
 		"jsonCall": "modules/jsonCall",
 		"jsonpCall": "modules/jsonpCall",
 		"exploringBundles": "modules/exploringBundles",
-		"requireJSConfiguration": "modules/requireJSConfiguration",
+		"notesPlugin": "modules/notesPlugin",
 		"passingConfigurationInfo": "modules/passingConfigurationInfo",
 		"webWorkers": "modules/webWorkers",
 		"errorCallbacks": "modules/errorCallbacks",
