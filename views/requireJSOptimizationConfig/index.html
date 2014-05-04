@@ -697,10 +697,12 @@
 		<div class="row">
 		<!-- row begin -->
 			<div class="block-a">
-				
+				normalizeDirDefines
 			</div>
 			<div class="block-b">
-				
+				specify if normalization should occur only with bundled modules or for entire directory build.
+				<br />
+				possible values: "all", "skip"
 			</div>
 			<div class="block-c">
 				<span tabindex="0" class="view-notes">notes</span>
@@ -717,13 +719,32 @@
 					<h2>Usage</h2>
 					<ul>
 						<li>
-							
+							<mark class="eg">Example: normalizeDirDefines</mark>
+							<span class="code-block">
+								<span>
+									optimize: "uglify2",
+								</span>
+								<span>
+									skipDirOptimize : false,
+								</span>
+								<span>
+									normalizeDirDefines: "skip"
+								</span>
+							</span>
 						</li>
 					</ul>
 					<h2>Notes</h2>
 					<ul>
 						<li>
-							
+							r.js offers an excellent build hook "onBuildRead" which is invoked for each module, the return value of this hook will be used for the built file prior to minification. For performance reasons r.js will only invoke this only on bundled modules by default. Setting <code>normalizeDirDefines</code> to "all" means these modifications will be run on all files, not just your bundled modules.
+							<br />
+							Ref: <a href="http://merrickchristensen.com/articles/build-angular-with-requirejs.html">http://merrickchristensen.com/articles/build-angular-with-requirejs.html</a>
+						</li>
+						<li>
+							 Normalization is not done if <code>optimize</code> is set to "none". i.e. <code>normalizeDirDefines</code> will be automatically set to "skip"
+						</li>
+						<li>
+							 <code>normalizeDirDefines</code> is automatically set to "all", if <code>optimize</code> is not "none" and <code>skipDirOptimize</code> is false.
 						</li>
 					</ul>
 				</div>

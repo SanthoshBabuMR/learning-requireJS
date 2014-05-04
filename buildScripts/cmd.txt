@@ -26,6 +26,10 @@ Directory Optimization ( run from root directory )
 ----------------------
 
 optimizing scripts directory
+with normalizeDirDefines	:	node buildScripts/r.js -o buildScripts/requireJSBuildDirUsingNormalizeDirDefines.js
+
+
+optimizing scripts directory
 with skipDirOptimize		:	node buildScripts/r.js -o buildScripts/requireJSBuildDirUsingSkipDirOptimize.js
 
 
