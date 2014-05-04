@@ -14,7 +14,7 @@
     , out : "../buildSingleFile/aSimpleFunctionDefinitionNoOptimization.js"
     , optimize: "none"
 
-    // ** Optimize using uglify2
+    // ** Optimize using uglify
     // , out : "../buildSingleFile/aSimpleFunctionDefinitionuglify.js"
     // , optimize: "uglify"
 

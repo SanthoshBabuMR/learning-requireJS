@@ -15,7 +15,7 @@
     , out : "../buildSingleFile/loadLegacyScriptTRUE.js"
     , wrapShim: true
 
-    // ** Disable Optimization
+    // ** Disable wrapShim
     // , out : "../buildSingleFile/loadLegacyScriptFALSE.js"
     // , wrapShim: false
 
