@@ -2,6 +2,11 @@ Single File Optimization ( run from root directory )
 ------------------------
 
 optimizing single module
+files with 
+generateSourceMaps			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingSourceMaps.js
+
+
+optimizing single module
 files with optimize			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingOptimize.js
 
 

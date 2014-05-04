@@ -542,7 +542,7 @@
 							<span class="code-block">
 								<span>
 									optimize: "uglify"
-								</span>								
+								</span>
 							</span>
 						</li>
 					</ul>
@@ -663,11 +663,25 @@
 					<h2>Usage</h2>
 					<ul>
 						<li>
-							
+							<mark class="eg">Example: enable generateSourceMaps</mark>
+							<span class="code-block">
+								<span>
+									optimize: "uglify2",
+								</span>
+								<span>
+									preserveLicenseComments: false,
+								</span>
+								<span>
+									generateSourceMaps: true
+								</span>
+							</span>
 						</li>
 					</ul>
 					<h2>Notes</h2>
 					<ul>
+						<li>
+							The source files will show up in a browser developer tool that supports source maps as ".js.src" files.
+						</li>
 						<li>
 							
 						</li>
