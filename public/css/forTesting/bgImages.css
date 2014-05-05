@@ -1,0 +1,18 @@
+/*
+** a simple css test file
+*/
+.logo {
+	background: url("../../public/images/logo.png");
+}
+
+.doc-wrap {
+	background: url("/public/images/pageBackground.jpg");
+}
+
+.g-logo {
+	background: url("https://google.com/assets/g-logo.png");
+}
+
+.snow {
+	background: url("../public/images/ria/snow.gif");
+}

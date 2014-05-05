@@ -989,6 +989,290 @@
 		<div class="row">
 		<!-- row begin -->
 			<div class="block-a">
+				cssImportIgnore
+			</div>
+			<div class="block-b">
+				If optimizeCss is in use, a list of files to ignore for the @import inlining.
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - don't ignore any css @import</mark>
+							<span class="code-block">
+								cssImportIgnore: null
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - ignore the list of css @import</mark>
+							<span class="code-block">
+								cssImportIgnore: "grid.css,typography.css"
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							The value of this option should be a string of comma separated CSS file names to ignore (like 'a.css,b.css'. The file names should match whatever strings are used in the @import calls.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				cssIn
+			</div>
+			<div class="block-b">
+				Optimize a single CSS file
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - optimize a single css file</mark>
+							<span class="code-block">
+								<span>
+									cssIn: "path/to/main.css"	
+								</span>
+								<span>
+									, out: "path/to/css-optimized.css"
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							When using <code>cssIn</code> config option, use <code>out</code> config option to specify the output path and file name for the css
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				out
+			</div>
+			<div class="block-b">
+				Specify the output file path and file name
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - specifying a single js file optimization</mark>
+							<span class="code-block">
+								<span>
+									name: "path/to/scriptModule"	
+								</span>
+								<span>
+									, out: "path/to/optimizedScriptModule.js"
+								</span>
+							</span>
+						</li>
+						<li>
+							<mark class="eg">Example - specify a single css file optimization</mark>
+							<span class="code-block">
+								<span>
+									cssIn: "path/to/main.css"	
+								</span>
+								<span>
+									, out: "path/to/optimizedFile.css"
+								</span>
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							<code>out</code> requires the file extension for the optimized file.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				cssPrefix
+			</div>
+			<div class="block-b">
+				set a prefix URL for background images using relative URLs
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes hide">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row hide">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				inlineText
+			</div>
+			<div class="block-b">
+				Inlines the text for any text! dependencies
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example : inline text dependency</mark>
+							<span class="code-block">
+								inlineText: true
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							Inlines the text for any text! dependencies, to avoid the separate async XMLHttpRequest calls to load those dependencies.
+						</li>
+						<li>
+							<mark class="imp">
+								Not quite sure, if this works with text! involving http/https calls
+							</mark>							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				
+			</div>
+			<div class="block-b">
+				
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
 				
 			</div>
 			<div class="block-b">

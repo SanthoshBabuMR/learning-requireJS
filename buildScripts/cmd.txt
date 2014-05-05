@@ -2,6 +2,14 @@ Single File Optimization ( run from root directory )
 ------------------------
 
 optimizing single module
+file with inlineText option:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileInlineText.js
+
+
+optimizing single module
+file with cssPrefix option:		node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileCssPrefix.js
+
+
+optimizing single module
 file with optimizeCss option:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileOptimizeCss.js
 
 optimizing single module
