@@ -1,4 +1,4 @@
-require( [ "jquery", "text!notes/dummyText.txt", "text!templates/gridTemplate.html", "text!gridCss", "text!layoutTemplate!strip", "text!personSchema" ], function ( $, txt, html, grid, layout, json) {
+require( [ "jquery", "text!notes/dummyText.txt", "text!templates/gridTemplate.html", "text!gridCss/grid.css", "text!layoutTemplate/layout.html!strip", "text!personSchema/profile.json" ], function ( $, txt, html, grid, layout, json) {
 	var str = "";
 
 		str += "<h1>Loading Non Js Assets.js using !text</h1>";

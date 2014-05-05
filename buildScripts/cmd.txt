@@ -1,5 +1,8 @@
 Single File Optimization ( run from root directory )
 ------------------------
+optimizing single module
+file with skipModuleInsertion 
+option:							node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileSkipModuleInsertion.js
 
 optimizing single module
 file with namespace option:		node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileNamespace.js

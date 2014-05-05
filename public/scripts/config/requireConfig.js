@@ -65,9 +65,9 @@ require.config({
 		"css": "../css",
 
 		// non js asset modules
-		"gridCss": "../css/modules/grid.css",
-		"layoutTemplate": "../templates/layout.html",
-		"personSchema": "data/schema/profile.json",
+		"gridCss": "../css/modules",
+		"layoutTemplate": "../templates",
+		"personSchema": "data/schema",
 
 		// CORS Server request
         "corstxt" : "http://localhost:4234/public/notes",

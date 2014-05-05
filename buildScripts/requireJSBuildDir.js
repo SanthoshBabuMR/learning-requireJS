@@ -2,6 +2,19 @@
 
       baseUrl: "../public/scripts"
     , mainConfigFile: "../public/scripts/config/requireConfig.js"
+    , paths: {
+        // CORS Server request
+          "corstxt" : "empty:"
+        , "corshtml" : "empty:"
+        , "corscss" : "empty:"
+        , "corsjson" : "empty:"
+
+        // Non-CORS server request
+        , "noncorstxt" : "empty:"
+        , "noncorshtml" : "empty:"
+        , "noncorscss" : "empty:"
+        , "noncorsjson" : "empty:"
+    }
     , dir: "../buildDir"
     , optimize: "uglify"
     , modules: [
