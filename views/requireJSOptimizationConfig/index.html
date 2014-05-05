@@ -7,6 +7,9 @@
 </head>
 <body>
 	<h1>requireJS Optimization Config Options</h1>
+	<p>
+		Ref: <a href="https://github.com/jrburke/r.js/blob/master/build/example.build.js">https://github.com/jrburke/r.js/blob/master/build/example.build.js</a>
+	</p>
 	<div class="grid-b grid-container-config-opt">
 
 		<div class="row">
@@ -755,10 +758,10 @@
 		<div class="row">
 		<!-- row begin -->
 			<div class="block-a">
-				
+				uglify
 			</div>
 			<div class="block-b">
-				
+				Specify config option for uglify, when <code>optimize</code> is to "uglify"
 			</div>
 			<div class="block-c">
 				<span tabindex="0" class="view-notes">notes</span>
@@ -767,6 +770,135 @@
 		</div>
 
 		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - specifying uglify config option</mark>
+							<span class="code-block">
+								<span>
+									uglify: {
+										<span>
+											toplevel: true
+										</span>
+										<span>
+											, ascii_only: true
+										</span>
+								         <span>
+								         	, beautify: true
+								         </span>
+								         <span>
+								         	, max_line_length: 300
+								         </span>
+								    }
+								</span>
+							</span>
+							
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							See <a href="https://github.com/mishoo/UglifyJS">https://github.com/mishoo/UglifyJS</a> for the possible values.
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				uglify2
+			</div>
+			<div class="block-b">
+				Specify config option for uglify2, when <code>optimize</code> is to "uglify2"
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block notes clrAft">
+				<div class="block-a">
+				</div>
+				<div class="block-b">
+					<h2>Usage</h2>
+					<ul>
+						<li>
+							<mark class="eg">Example - specifying uglify2 config option</mark>
+							<span class="code-block">
+								 , uglify2: {
+								 	<span>
+								 		indent_level: 2
+								 	</span>
+								 	<span>
+								 		, comments: false
+								 	</span>
+									<span>
+								 		, drop_debugger: true
+								 	</span>
+								 	<span>
+								 		, dead_code: true
+								 	</span>
+								 	<span>
+								 		, warnings: true
+								 	</span>
+								 	<span>
+								 		, mangle: false
+								 	</span>
+							    }
+							</span>
+						</li>
+					</ul>
+					<h2>Notes</h2>
+					<ul>
+						<li>
+							For possible values see:
+							<ul>
+								<li>
+									<a href="http://lisperator.net/uglifyjs/codegen">http://lisperator.net/uglifyjs/codegen</a>
+								</li>
+								<li>
+									<a href="http://lisperator.net/uglifyjs/compress">http://lisperator.net/uglifyjs/compress</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="block-c">
+					<div tabindex="0" class="close-notes">close</div>
+				</div>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row">
+		<!-- row begin -->
+			<div class="block-a">
+				closure
+			</div>
+			<div class="block-b">
+				Specify config option for closure, when <code>optimize</code> is to "closure"
+			</div>
+			<div class="block-c">
+				<span tabindex="0" class="view-notes hide">notes</span>
+			</div>
+		<!-- row end -->
+		</div>
+
+		<div class="row hide">
 		<!-- row begin -->
 			<div class="block notes clrAft">
 				<div class="block-a">
@@ -795,10 +927,10 @@
 		<div class="row">
 		<!-- row begin -->
 			<div class="block-a">
-				
+				optimizeCss
 			</div>
 			<div class="block-b">
-				
+				Enable or disable CSS optimizations
 			</div>
 			<div class="block-c">
 				<span tabindex="0" class="view-notes">notes</span>
@@ -815,93 +947,35 @@
 					<h2>Usage</h2>
 					<ul>
 						<li>
-							
+							<mark class="eg">Example - optimizeCss config option</mark>
+							<span class="code-block">
+								<span>
+									optimizeCss: "standard.keepLines.keepWhitespace"
+								</span>
+							</span>
 						</li>
 					</ul>
 					<h2>Notes</h2>
 					<ul>
 						<li>
-							
+							"none": skip CSS optimizations.						
 						</li>
-					</ul>
-				</div>
-				<div class="block-c">
-					<div tabindex="0" class="close-notes">close</div>
-				</div>
-			</div>
-		<!-- row end -->
-		</div>
-
-		<div class="row">
-		<!-- row begin -->
-			<div class="block-a">
-				
-			</div>
-			<div class="block-b">
-				
-			</div>
-			<div class="block-c">
-				<span tabindex="0" class="view-notes">notes</span>
-			</div>
-		<!-- row end -->
-		</div>
-
-		<div class="row">
-		<!-- row begin -->
-			<div class="block notes clrAft">
-				<div class="block-a">
-				</div>
-				<div class="block-b">
-					<h2>Usage</h2>
-					<ul>
 						<li>
-							
+							"standard": @import inlining and removal of comments, unnecessary whitespace and line returns.
+							<br />
+							Removing line returns may have problems in IE, depending on the type of CSS.
 						</li>
-					</ul>
-					<h2>Notes</h2>
-					<ul>
 						<li>
-							
+							"standard.keepLines": like "standard" but keeps line returns.
 						</li>
-					</ul>
-				</div>
-				<div class="block-c">
-					<div tabindex="0" class="close-notes">close</div>
-				</div>
-			</div>
-		<!-- row end -->
-		</div>
-
-		<div class="row">
-		<!-- row begin -->
-			<div class="block-a">
-				
-			</div>
-			<div class="block-b">
-				
-			</div>
-			<div class="block-c">
-				<span tabindex="0" class="view-notes">notes</span>
-			</div>
-		<!-- row end -->
-		</div>
-
-		<div class="row">
-		<!-- row begin -->
-			<div class="block notes clrAft">
-				<div class="block-a">
-				</div>
-				<div class="block-b">
-					<h2>Usage</h2>
-					<ul>
 						<li>
-							
+							"standard.keepComments": keeps the file comments, but removes line returns. 
 						</li>
-					</ul>
-					<h2>Notes</h2>
-					<ul>
 						<li>
-							
+							"standard.keepComments.keepLines": keeps the file comments and line returns.
+						</li>
+						<li>
+							"standard.keepWhitespace": like "standard" but keeps unnecessary whitespace.
 						</li>
 					</ul>
 				</div>

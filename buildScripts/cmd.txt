@@ -2,20 +2,27 @@ Single File Optimization ( run from root directory )
 ------------------------
 
 optimizing single module
-files with 
+file with optimizeCss option:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileOptimizeCss.js
+
+optimizing single module
+file with uglify option		:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingUglify.js
+
+
+optimizing single module
+file with 
 generateSourceMaps			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingSourceMaps.js
 
 
 optimizing single module
-files with optimize			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingOptimize.js
+file with optimize			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingOptimize.js
 
 
 optimizing single module
-files with locale			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingLocale.js
+file with locale			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingLocale.js
 
 
 optimizing single module
-files with wrapShim			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingWrapShim.js
+file with wrapShim			:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFileUsingWrapShim.js
 
 
 optimizing single module	:	node buildScripts/r.js -o buildScripts/requireJSBuildSingleFile.js

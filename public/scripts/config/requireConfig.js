@@ -63,7 +63,6 @@ require.config({
 		"templates": "../templates",
 		"css": "../css",
 
-
 		// non js asset modules
 		"gridCss": "../css/modules/grid.css",
 		"layoutTemplate": "../templates/layout.html",

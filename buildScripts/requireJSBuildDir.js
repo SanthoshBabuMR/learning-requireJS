@@ -2,7 +2,6 @@
 
       baseUrl: "../public/scripts"
     , mainConfigFile: "../public/scripts/config/requireConfig.js"
-    // , optimize: "none"
     , dir: "../buildDir"
     , optimize: "uglify"
     , modules: [
@@ -40,6 +39,7 @@
             name: 'relativePathLoading'
         }
     ]
+    , skipDirOptimize: true
     // , "keepBuildDir": true
 
 })
