@@ -4,6 +4,7 @@ require.config({
 		// lib
 		"jquery": "lib/jquery-2.1.0",
 		"moment": "lib/moment-with-langs",
+		"requireLib": "lib/require",
 
 		// plugins
 		"text": "lib/plugins/text",
