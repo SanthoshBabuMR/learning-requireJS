@@ -22,12 +22,12 @@
 
 	// ** for Single File Build with skipModuleInsertion : false
 	, name : "legacyModules/maths"
-	, out : "../buildSingleFile/helloWorldSkipModuleInsertionFALSE.js"
+	, out : "../buildSingleFile/mathsSkipModuleInsertionFALSE.js"
 	, skipModuleInsertion: false
 
 	// ** for Single File Build with skipModuleInsertion : true
 	// , name : "legacyModules/maths"
-	// , out : "../buildSingleFile/helloWorldSkipModuleInsertionTRUE.js"
+	// , out : "../buildSingleFile/mathsorldSkipModuleInsertionTRUE.js"
 	// , skipModuleInsertion: true
 
 	// ** for Dir Build with skipModuleInsertion : false

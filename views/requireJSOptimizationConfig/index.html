@@ -1319,10 +1319,10 @@
 		<div class="row">
 		<!-- row begin -->
 			<div class="block-a">
-				
+				stubModules
 			</div>
 			<div class="block-b">
-				
+				Specify modules to stub out in the optimized file.
 			</div>
 			<div class="block-c">
 				<span tabindex="0" class="view-notes">notes</span>
@@ -1339,13 +1339,29 @@
 					<h2>Usage</h2>
 					<ul>
 						<li>
-							
+							<mark class="eg">Example - using stubModules</mark>
+							<span class="code-block">
+								stubModules: ["module1", "module2"]
+							</span>
 						</li>
 					</ul>
 					<h2>Notes</h2>
 					<ul>
 						<li>
-							
+							The optimizer will use the source version of these modules for dependency tracing and for plugin use, but when writing the text into an optimized bundle, these modules will get the following text instead:
+							<br />
+							If the module is used as a plugin:
+							<span class="code-block">
+									<span>
+										define({load: function(id){throw new Error("Dynamic load not allowed: " + id);}});
+									</span>
+							</span>
+							If just a plain module:
+							<span class="code-block">
+									<span>
+										define({});
+									</span>
+							</span>
 						</li>
 					</ul>
 				</div>
