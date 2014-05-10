@@ -1,7 +1,9 @@
 module.exports = function( grunt ) {
+
+	// grunt config
 	grunt.initConfig({
 		connect: {
-			server: {
+			appServer: {
 				// server begin
 				options: {
 					hostname: "localhost",
@@ -53,12 +55,13 @@ module.exports = function( grunt ) {
 		}
 	});
 
+	// load task(s)
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
 
-	grunt.registerTask( "default", "connect" );
+	// register task(s)
+	grunt.registerTask( "appServer", "connect:appServer" );
 	grunt.registerTask( "nonCorsServer", "connect:nonCorsServer" );
 	grunt.registerTask( "corsServer", "connect:corsServer" );
 	grunt.registerTask( "serverIp", "connect:ip" );
 
-	// grunt.registerTask( "startServers", ["connect", "connect:nonCorsServer", "connect:corsServer" ] );
 };

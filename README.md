@@ -11,19 +11,19 @@ Exploring requireJS Library
 * grunt-contrib-connect
 
 **Launching server from grunt**
-* Web server
+* Default/App Server ( http://localhost:6234/ )
 ```bash
-grunt
+grunt appServer
 ```
-* "Cross-Orgin Resource Sharing" enabled server
-```bash
-grunt corsServer
-```
-* Non-"Cross-Orgin Resource Sharing" server
+* Non-"Cross-Orgin Resource Sharing" server  ( http://localhost:5234/ )
 ```bash
 grunt nonCorsServer
 ```
-* run a server using ip address
+* "Cross-Orgin Resource Sharing" enabled server  ( http://localhost:4234/ )
+```bash
+grunt corsServer
+```
+* run a server using ip address  ( http://127.1.1.1:6111/ )
 ```bash
 grunt serverIp
 ```
