@@ -1,5 +1,11 @@
 Exploring requireJS Library
 
+**What's Covered**
+* explored RequireJS 2.1.11
+* tried requireJS config options ( baseUrl, paths, shim, map, urlArgs, waitSeconds )
+* tried out requireJS plugins ( text, domReady, i18n )
+* tried r.js optimization with single file and the entire app directory
+* made few notes on requireJS config option(s) and r.js optimization config option(s)
 
 **Dependencies**
 * grunt-contrib-connect
